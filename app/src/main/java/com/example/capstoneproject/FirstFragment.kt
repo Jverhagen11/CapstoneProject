@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import com.example.capstoneproject.TabFragments.PastRacesFragment
 import com.example.capstoneproject.TabFragments.UpcomingRacesFragment
 import com.example.capstoneproject.TabFragments.ViewPagerAdapter
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_first.*
 
 class FirstFragment : Fragment() {
@@ -26,8 +27,8 @@ class FirstFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
+
 
 
 

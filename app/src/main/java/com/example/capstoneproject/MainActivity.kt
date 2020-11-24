@@ -1,8 +1,6 @@
 package com.example.capstoneproject
 
 import android.os.Bundle
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
@@ -11,6 +9,7 @@ import com.example.capstoneproject.TabFragments.PastRacesFragment
 import com.example.capstoneproject.TabFragments.UpcomingRacesFragment
 import com.example.capstoneproject.TabFragments.ViewPagerAdapter
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         requestWindowFeature(Window.FEATURE_ACTION_BAR)
         setContentView(R.layout.activity_main)
-//        setSupportActionBar(findViewById(R.id.toolbar))
+        setSupportActionBar(findViewById(R.id.toolbar))
         setUpTabs()
     }
 
@@ -38,11 +37,12 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun setUpTabs() {
+    private fun setUpTabs() {
         val adapter = ViewPagerAdapter(supportFragmentManager)
         adapter.addFragment(UpcomingRacesFragment(), "Upcoming")
         adapter.addFragment(PastRacesFragment(), "Past")
         viewPager.adapter = adapter
         tabs.setupWithViewPager(viewPager)
     }
+
 }
