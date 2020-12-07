@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".TabFragments.UpcomingRacesFragment">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="UPCOMING"
-        android:textSize="30sp"
-        />
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:text="upcoming"
+    android:textSize="30sp"/>
 
-</FrameLayout>
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </androidx.viewpager.widget.ViewPager>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

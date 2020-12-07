@@ -6,6 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".SecondFragment">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="2"
+        android:textSize="30sp"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,6 +11,10 @@ class ViewPagerAdapter(supportFragmentManager: FragmentManager)  : FragmentPager
     private val mFragmentTitleList = ArrayList<String>()
 
     override fun getItem(position: Int): Fragment {
+        when(position){
+            0 -> UpcomingRacesFragment()
+            1 -> PastRacesFragment()
+        }
         return mFragmentList[position]
     }
 
