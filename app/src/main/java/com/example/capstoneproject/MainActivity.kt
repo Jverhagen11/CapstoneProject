@@ -28,7 +28,6 @@ class MainActivity : AppCompatActivity() {
 
         bottomNavigationView.setupWithNavController(navController)
 
-        viewModel.getRace()
 
 
     }

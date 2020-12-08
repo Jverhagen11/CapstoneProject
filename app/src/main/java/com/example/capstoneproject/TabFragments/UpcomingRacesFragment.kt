@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.capstoneproject.Model.Race
+import com.example.capstoneproject.Model.RaceResponse
 import com.example.capstoneproject.R
 import com.example.capstoneproject.Viewmodel.RaceViewModel
 import com.example.capstoneproject.databinding.FragmentUpcomingRaceItemBinding
@@ -25,11 +25,11 @@ import kotlinx.android.synthetic.main.fragment_upcoming_races.view.*
 class UpcomingRacesFragment : Fragment() {
 
     private val raceViewModel: RaceViewModel by viewModels()
-    private val races = arrayListOf<Race>()
-    private val raceAdapter = UpcomingRacesAdapter(races)
+    private val races = arrayListOf<RaceResponse.Race>()
+    private var raceAdapter: UpcomingRacesAdapter? = null
 
     private lateinit var binding: FragmentUpcomingRacesBinding
-    
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -41,21 +41,16 @@ class UpcomingRacesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initRecyclerView()
+        raceAdapter = UpcomingRacesAdapter(races)
+        raceViewModel.getRace()
         observeRace()
+        initRecyclerView()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
 
-//    private fun initRv() {
-//        upcomingRacesRV.apply {
-//            adapter = raceAdapter
-//            layoutManager = GridLayoutManager(context, 1)
-//
-//        }
-//    }
 
     private fun initRecyclerView() {
         upcomingRacesRV.apply {
@@ -71,18 +66,15 @@ class UpcomingRacesFragment : Fragment() {
     }
 
     private fun observeRace() {
-        raceViewModel.race.observe(viewLifecycleOwner, Observer {
+        raceViewModel.races.observe(viewLifecycleOwner, Observer {
             races.clear()
-            races.addAll(listOf(it))
-            raceAdapter.notifyDataSetChanged()
+            races.addAll(it as Collection<RaceResponse.Race>)
+            raceAdapter?.notifyDataSetChanged()
         })
-
         // Observe the error message.
         raceViewModel.errorText.observe(viewLifecycleOwner, Observer {
             Toast.makeText(activity, it, Toast.LENGTH_SHORT).show()
         })
     }
-
-
 
 }
