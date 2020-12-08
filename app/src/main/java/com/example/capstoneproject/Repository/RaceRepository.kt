@@ -19,11 +19,11 @@ class RaceRepository {
     suspend fun getRace()  {
         try {
             //timeout the request after 5 seconds
-            val result = withTimeout(5_000) {
+            val parsedRaceResponse  = withTimeout(5_000) {
                 raceApiService.getRace()
             }
 
-            _race.value = result
+            _race.value = parsedRaceResponse
         } catch (error: Throwable) {
             throw RaceError("Unable to refresh api", error)
         }

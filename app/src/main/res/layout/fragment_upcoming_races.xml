@@ -9,14 +9,14 @@
         android:id="@+id/upcomingRacesRV"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="8dp" />
+        android:padding="8dp"
+        tools:listitem="@layout/fragment_upcoming_race_item"/>
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/viewPager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </androidx.viewpager.widget.ViewPager>
-
+<!--    <androidx.viewpager.widget.ViewPager-->
+<!--        android:id="@+id/viewPager"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
+<!--    </androidx.viewpager.widget.ViewPager>-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

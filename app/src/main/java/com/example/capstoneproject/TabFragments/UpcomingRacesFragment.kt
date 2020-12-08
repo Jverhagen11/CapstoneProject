@@ -10,6 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.observe
 import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.capstoneproject.Model.Race
@@ -48,8 +49,16 @@ class UpcomingRacesFragment : Fragment() {
         super.onCreate(savedInstanceState)
     }
 
+//    private fun initRv() {
+//        upcomingRacesRV.apply {
+//            adapter = raceAdapter
+//            layoutManager = GridLayoutManager(context, 1)
+//
+//        }
+//    }
+
     private fun initRecyclerView() {
-        upcomingRacesRV.run {
+        upcomingRacesRV.apply {
             adapter = this@UpcomingRacesFragment.raceAdapter
             layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
             addItemDecoration(
@@ -63,7 +72,9 @@ class UpcomingRacesFragment : Fragment() {
 
     private fun observeRace() {
         raceViewModel.race.observe(viewLifecycleOwner, Observer {
-            raceName.text = it?.raceName
+            races.clear()
+            races.addAll(listOf(it))
+            raceAdapter.notifyDataSetChanged()
         })
 
         // Observe the error message.
@@ -71,5 +82,7 @@ class UpcomingRacesFragment : Fragment() {
             Toast.makeText(activity, it, Toast.LENGTH_SHORT).show()
         })
     }
+
+
 
 }

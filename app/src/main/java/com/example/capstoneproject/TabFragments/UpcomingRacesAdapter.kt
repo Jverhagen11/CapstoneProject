@@ -21,7 +21,7 @@ class UpcomingRacesAdapter(private val races: List<Race>) :
 
         private val binding = FragmentUpcomingRaceItemBinding.bind(itemView)
 
-        @RequiresApi(Build.VERSION_CODES.O)
+//        @RequiresApi(Build.VERSION_CODES.O)
         fun dataBind(raceList: Race) {
             binding.raceName.text = raceList.raceName
 
@@ -45,6 +45,8 @@ class UpcomingRacesAdapter(private val races: List<Race>) :
     override fun getItemCount(): Int {
         return races.size
     }
+
+
 
 }
 

@@ -1,10 +1,12 @@
 package com.example.capstoneproject.Api
 
 
-import okhttp3.*
+import com.google.gson.GsonBuilder
+import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+
 
 class RaceApi {
 
@@ -21,11 +23,15 @@ class RaceApi {
                     .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
                     .build()
 
+            val gson = GsonBuilder()
+                .setLenient()
+                .create()
+
             // Create the Retrofit instance
             val raceApi = Retrofit.Builder()
                     .baseUrl(baseUrl)
                     .client(okHttpClient)
-                    .addConverterFactory(GsonConverterFactory.create())
+                    .addConverterFactory(GsonConverterFactory.create(gson))
                     .build()
 
             // Return the Retrofit NumbersApiService
