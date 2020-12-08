@@ -7,6 +7,6 @@ import retrofit2.http.Query
 interface RaceApiService {
 
     @GET("/2012")
-    suspend fun getMovies(): Race
+    suspend fun getRace(): Race
 
 }
