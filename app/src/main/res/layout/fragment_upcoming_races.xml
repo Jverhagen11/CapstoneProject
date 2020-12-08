@@ -5,11 +5,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".TabFragments.UpcomingRacesFragment">
 
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:text="upcoming"
-    android:textSize="30sp"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/upcomingRacesRV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp" />
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"

@@ -10,7 +10,7 @@ class RaceApi {
 
     companion object {
         // The base url off the api.
-        private const val baseUrl = "https://ergast.com/api/f1"
+        private const val baseUrl = "https://ergast.com/api/f1/"
 
         /**
          * @return [RaceApiService] The service class off the retrofit client.
@@ -22,14 +22,14 @@ class RaceApi {
                     .build()
 
             // Create the Retrofit instance
-            val triviaApi = Retrofit.Builder()
+            val raceApi = Retrofit.Builder()
                     .baseUrl(baseUrl)
                     .client(okHttpClient)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()
 
             // Return the Retrofit NumbersApiService
-            return triviaApi.create(RaceApiService::class.java)
+            return raceApi.create(RaceApiService::class.java)
         }
     }
 }

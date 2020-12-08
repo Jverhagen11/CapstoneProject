@@ -13,16 +13,9 @@ class RaceRepository {
 
     private val _race: MutableLiveData<Race> = MutableLiveData()
 
-    /**
-     * Expose non MutableLiveData via getter
-     * Encapsulation :)
-     */
     val race: LiveData<Race>
         get() = _race
 
-    /**
-     * suspend function that calls a suspend function from the numbersApi call
-     */
     suspend fun getRace()  {
         try {
             //timeout the request after 5 seconds
@@ -32,10 +25,10 @@ class RaceRepository {
 
             _race.value = result
         } catch (error: Throwable) {
-            throw TriviaRefreshError("Unable to refresh api", error)
+            throw RaceError("Unable to refresh api", error)
         }
     }
 
-    class TriviaRefreshError(message: String, cause: Throwable) : Throwable(message, cause)
+    class RaceError(message: String, cause: Throwable) : Throwable(message, cause)
 
 }
