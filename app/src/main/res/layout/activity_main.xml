@@ -22,7 +22,6 @@
             app:popupTheme="@style/Theme.CapstoneProject.PopupOverlay" />
 
 
-
     </com.google.android.material.appbar.AppBarLayout>
 
 
