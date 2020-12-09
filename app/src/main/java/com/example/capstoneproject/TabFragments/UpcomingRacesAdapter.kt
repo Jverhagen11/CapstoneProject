@@ -6,11 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.capstoneproject.Model.RaceResponse
+import com.example.capstoneproject.Model.RaceX
 import com.example.capstoneproject.R
 import com.example.capstoneproject.databinding.FragmentUpcomingRaceItemBinding
 
-class UpcomingRacesAdapter(private val races: List<RaceResponse.Races>) :
+class UpcomingRacesAdapter(private val races: List<RaceX>) :
         RecyclerView.Adapter<UpcomingRacesAdapter.ViewHolder>() {
 
     private lateinit var context: Context
@@ -19,7 +19,7 @@ class UpcomingRacesAdapter(private val races: List<RaceResponse.Races>) :
 
          val binding = FragmentUpcomingRaceItemBinding.bind(itemView)
 
-        fun dataBind(race: RaceResponse.Races) {
+        fun dataBind(race: RaceX) {
             binding.raceName.text = race.raceName
         }
     }

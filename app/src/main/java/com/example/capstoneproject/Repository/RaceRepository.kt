@@ -6,42 +6,28 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.capstoneproject.Api.RaceApi
 import com.example.capstoneproject.Api.RaceApiService
-import com.example.capstoneproject.Model.RaceResponse
+import com.example.capstoneproject.Model.*
 import kotlinx.coroutines.withTimeout
 
 class RaceRepository {
 
     private val raceApiService: RaceApiService = RaceApi.createApi()
 
-    private val _races: MutableLiveData<List<RaceResponse.Races>> = MutableLiveData()
-    val races: LiveData<List<RaceResponse.Races>> get() = _races
+    private val _races: MutableLiveData<List<RaceX>> = MutableLiveData()
+    val races: LiveData<List<RaceX>> get() = _races
 
-    private val _mdr: MutableLiveData<List<RaceResponse.Races>> = MutableLiveData()
-    val mdr: MutableLiveData<List<RaceResponse.Races>> get() = _mdr
+    private val _data: MutableLiveData<MRData> = MutableLiveData()
+    val data: MutableLiveData<MRData> get() = _data
 
 
-//    suspend fun getRace()  {
-//        try {
-//            //timeout the request after 5 seconds
-//
-//            val result = withTimeout(5_000) {
-//                raceApiService.getRace()
-//            }
-//
-//            _races.value = result.races
-//        } catch (error: Throwable) {
-//            throw RaceError("Unable to refresh api", error)
-//        }
-//    }
-
-    suspend fun getMRData() {
+    suspend fun getData() {
         try {
             //timeout the request after 5 seconds
             val result = withTimeout(5_000) {
-                raceApiService.getMRData()
+                raceApiService.getData()
             }
+            _races.value = result.MRData.RaceTable.races
 
-           _mdr.value = result.races
         } catch (error: Throwable) {
             throw RaceError("Unable to refresh api", error)
         }
