@@ -10,7 +10,6 @@ import com.example.capstoneproject.Model.RaceResponse
 import com.example.capstoneproject.R
 import com.example.capstoneproject.databinding.FragmentUpcomingRaceItemBinding
 
-
 class UpcomingRacesAdapter(private val races: List<RaceResponse.Races>) :
         RecyclerView.Adapter<UpcomingRacesAdapter.ViewHolder>() {
 

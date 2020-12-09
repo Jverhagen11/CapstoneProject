@@ -32,10 +32,11 @@ class UpcomingRacesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initRecyclerView()
+
         raceViewModel.getMRData()
-        raceViewModel.getRace()
+//        raceViewModel.getRace()
         observeRace()
+        initRecyclerView()
 
     }
 
@@ -47,7 +48,7 @@ class UpcomingRacesFragment : Fragment() {
     }
 
     private fun observeRace() {
-        raceViewModel.mdr.observe(viewLifecycleOwner, Observer {
+        raceViewModel.races.observe(viewLifecycleOwner, Observer {
             races.clear()
             races.addAll(it)
             raceAdapter.notifyDataSetChanged()

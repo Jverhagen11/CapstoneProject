@@ -1,5 +1,6 @@
 package com.example.capstoneproject.Repository
 
+import android.content.ContentValues.TAG
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -19,27 +20,28 @@ class RaceRepository {
     val mdr: MutableLiveData<List<RaceResponse.Races>> get() = _mdr
 
 
-    suspend fun getRace()  {
-        try {
-            //timeout the request after 5 seconds
+//    suspend fun getRace()  {
+//        try {
+//            //timeout the request after 5 seconds
+//
+//            val result = withTimeout(5_000) {
+//                raceApiService.getRace()
+//            }
+//
+//            _races.value = result.races
+//        } catch (error: Throwable) {
+//            throw RaceError("Unable to refresh api", error)
+//        }
+//    }
 
-            val result = withTimeout(5_000) {
-                raceApiService.getRace()
-            }
-
-            _races.value = result.races
-        } catch (error: Throwable) {
-            throw RaceError("Unable to refresh api", error)
-        }
-    }
-
-    suspend fun getMRData()  {
+    suspend fun getMRData() {
         try {
             //timeout the request after 5 seconds
             val result = withTimeout(5_000) {
                 raceApiService.getMRData()
             }
-           _mdr.value = result.raceTable.races
+
+           _mdr.value = result.races
         } catch (error: Throwable) {
             throw RaceError("Unable to refresh api", error)
         }

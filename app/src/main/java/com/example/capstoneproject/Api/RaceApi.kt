@@ -12,7 +12,7 @@ class RaceApi {
 
     companion object {
         // The base url off the api.
-        private const val baseUrl = "https://ergast.com/api/f1/"
+        private const val baseUrl = "https://ergast.com/api/"
 
         /**
          * @return [RaceApiService] The service class off the retrofit client.
@@ -22,7 +22,6 @@ class RaceApi {
             val okHttpClient = OkHttpClient.Builder()
                 .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
                 .build()
-
             // Create the Retrofit instance
             val raceApi = Retrofit.Builder()
                 .baseUrl(baseUrl)
