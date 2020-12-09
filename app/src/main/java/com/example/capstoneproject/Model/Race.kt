@@ -12,8 +12,7 @@ class RaceResponse() {
     )
 
     data class RaceTable(
-        @SerializedName("races") val races: List<Races>,
-        @SerializedName("season") val season: String
+        @SerializedName("races") val races: List<Races>
     )
 
 

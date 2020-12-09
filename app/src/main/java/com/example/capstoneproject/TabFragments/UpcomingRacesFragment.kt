@@ -47,7 +47,7 @@ class UpcomingRacesFragment : Fragment() {
     }
 
     private fun observeRace() {
-        raceViewModel.races.observe(viewLifecycleOwner, Observer {
+        raceViewModel.mdr.observe(viewLifecycleOwner, Observer {
             races.clear()
             races.addAll(it)
             raceAdapter.notifyDataSetChanged()

@@ -21,6 +21,7 @@ class RaceViewModel(application: Application) : AndroidViewModel(application) {
     private val _errorText: MutableLiveData<String> = MutableLiveData()
 
     val races: LiveData<List<RaceResponse.Races>> = raceRepository.races
+    val mdr: LiveData<List<RaceResponse.Races>> = raceRepository.mdr
     val errorText: LiveData<String> get() = _errorText
 
     fun getRace() {
@@ -44,4 +45,9 @@ class RaceViewModel(application: Application) : AndroidViewModel(application) {
             }
         }
     }
+
+
+
+
+
 }
