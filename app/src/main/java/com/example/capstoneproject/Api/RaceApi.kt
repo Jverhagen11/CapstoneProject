@@ -23,15 +23,15 @@ class RaceApi {
                     .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
                     .build()
 
-            val gson = GsonBuilder()
-                .setLenient()
-                .create()
+//            val gson = GsonBuilder()
+//                .setLenient()
+//                .create()
 
             // Create the Retrofit instance
             val raceApi = Retrofit.Builder()
                     .baseUrl(baseUrl)
                     .client(okHttpClient)
-                    .addConverterFactory(GsonConverterFactory.create(gson))
+                    .addConverterFactory(GsonConverterFactory.create())
                     .build()
 
             // Return the Retrofit NumbersApiService

@@ -20,13 +20,24 @@ class RaceViewModel(application: Application) : AndroidViewModel(application) {
 
     private val _errorText: MutableLiveData<String> = MutableLiveData()
 
-    val races: LiveData<List<RaceResponse.Race>> = raceRepository.races
+    val races: LiveData<List<RaceResponse.Races>> = raceRepository.races
     val errorText: LiveData<String> get() = _errorText
 
     fun getRace() {
         mainScope.launch {
             try {
                 raceRepository.getRace()
+            } catch (error: RaceRepository.RaceError) {
+                _errorText.value = error.message
+                Log.e("Race error", error.cause.toString())
+            }
+        }
+    }
+
+    fun getMRData() {
+        mainScope.launch {
+            try {
+                raceRepository.getMRData()
             } catch (error: RaceRepository.RaceError) {
                 _errorText.value = error.message
                 Log.e("Race error", error.cause.toString())

@@ -5,12 +5,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import com.example.capstoneproject.TabFragments.PastRacesFragment
 import com.example.capstoneproject.TabFragments.UpcomingRacesFragment
 import com.example.capstoneproject.TabFragments.ViewPagerAdapter
+import com.example.capstoneproject.Viewmodel.RaceViewModel
 import kotlinx.android.synthetic.main.fragment_first.*
 
 class FirstFragment : Fragment() {
+
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,

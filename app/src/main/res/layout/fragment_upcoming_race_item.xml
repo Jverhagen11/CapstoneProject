@@ -18,8 +18,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/shopImage"
+        <TextView
+            android:id="@+id/raceRound"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginTop="16dp"
@@ -36,8 +36,8 @@
             android:layout_marginRight="16dp"
             android:layout_toStartOf="@+id/secondary_action"
             android:layout_toLeftOf="@+id/secondary_action"
-            android:layout_toEndOf="@+id/shopImage"
-            android:layout_toRightOf="@+id/shopImage"
+            android:layout_toEndOf="@+id/raceRound"
+            android:layout_toRightOf="@+id/raceRound"
             android:orientation="vertical"
             android:paddingTop="16dp"
             android:paddingBottom="16dp">
@@ -51,7 +51,7 @@
                 />
 
             <TextView
-                android:id="@+id/shopDescription"
+                android:id="@+id/raceSeason"
                 style="@style/TextAppearance.AppCompat.Body1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

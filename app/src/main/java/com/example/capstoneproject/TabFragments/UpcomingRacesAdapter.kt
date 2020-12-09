@@ -11,40 +11,32 @@ import com.example.capstoneproject.R
 import com.example.capstoneproject.databinding.FragmentUpcomingRaceItemBinding
 
 
-class UpcomingRacesAdapter(private val races: List<RaceResponse.Race>) :
+class UpcomingRacesAdapter(private val races: List<RaceResponse.Races>) :
         RecyclerView.Adapter<UpcomingRacesAdapter.ViewHolder>() {
 
+    private lateinit var context: Context
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        private val binding = FragmentUpcomingRaceItemBinding.bind(itemView)
+         val binding = FragmentUpcomingRaceItemBinding.bind(itemView)
 
-        fun dataBind(raceList: RaceResponse.Race) {
-            binding.raceName.text = raceList.raceName
-
+        fun dataBind(race: RaceResponse.Races) {
+            binding.raceName.text = race.raceName
         }
     }
 
-    override fun onCreateViewHolder(
-            parent: ViewGroup,
-            viewType: Int
-    ): ViewHolder {
-        return ViewHolder(
-                LayoutInflater.from(parent.context).inflate(R.layout.fragment_upcoming_race_item, parent, false)
-        )
-    }
-
-
-
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-
-        holder.dataBind(races[position])
+    override fun onCreateViewHolder( parent: ViewGroup, viewType: Int): ViewHolder {
+        context = parent.context
+        return ViewHolder(LayoutInflater.from(context).inflate(R.layout.fragment_upcoming_race_item, parent, false))
     }
 
     override fun getItemCount(): Int {
         return races.size
     }
 
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.dataBind(races[position])
+    }
 
 
 }
