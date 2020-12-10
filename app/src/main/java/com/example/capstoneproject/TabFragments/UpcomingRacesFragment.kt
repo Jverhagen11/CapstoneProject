@@ -9,11 +9,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.capstoneproject.Model.RaceResponse
 import com.example.capstoneproject.Model.RaceX
 import com.example.capstoneproject.R
 import com.example.capstoneproject.Viewmodel.RaceViewModel
-import kotlinx.android.synthetic.main.fragment_upcoming_race_item.*
 import kotlinx.android.synthetic.main.fragment_upcoming_races.*
 
 class UpcomingRacesFragment : Fragment() {

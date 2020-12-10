@@ -1,78 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_marginRight="15dp"
+    android:layout_marginTop="10dp">
 
-    <RelativeLayout
-        android:id="@+id/two_line_item"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?selectableItemBackground"
-        android:minHeight="72dp"
-        android:paddingStart="?listPreferredItemPaddingLeft"
-        android:paddingLeft="?listPreferredItemPaddingLeft"
-        android:paddingEnd="?listPreferredItemPaddingRight"
-        android:paddingRight="?listPreferredItemPaddingRight"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/raceRound"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="16dp"
-            android:scaleType="centerInside"
-            />
+        android:orientation="horizontal"
+        android:padding="16dp">
 
         <LinearLayout
-            android:id="@+id/lines_container"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignWithParentIfMissing="true"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_toStartOf="@+id/secondary_action"
-            android:layout_toLeftOf="@+id/secondary_action"
-            android:layout_toEndOf="@+id/raceRound"
-            android:layout_toRightOf="@+id/raceRound"
             android:orientation="vertical"
-            android:paddingTop="16dp"
-            android:paddingBottom="16dp">
+            android:layout_weight="1">
 
             <TextView
-                android:id="@+id/raceName"
-                style="@style/TextAppearance.AppCompat.Body2"
+                android:id="@+id/time"
+                android:layout_weight="5"
+                android:text="11:15"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:singleLine="true"
-                />
+                android:textSize="24sp"
+                android:textStyle="bold"/>
 
             <TextView
-                android:id="@+id/raceSeason"
-                style="@style/TextAppearance.AppCompat.Body1"
+                android:id="@+id/date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:singleLine="true"
-                />
+                android:layout_weight="5"
+                android:text="28-10-2020"
+                android:textSize="20sp"
+                android:textStyle="normal"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="15dp"
+            android:layout_weight="9">
+
+            <TextView
+                android:id="@+id/round"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="#FF0000"/>
+
+            <TextView
+                android:id="@+id/location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/RaceName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"/>
+
         </LinearLayout>
 
 
-        <Button
-            android:id="@+id/secondary_action"
-            android:layout_width="85dp"
-            android:layout_height="40dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="16dp"
-            android:scaleType="centerInside"
-            android:text="go to"
-            android:textSize="10sp"/>
-    </RelativeLayout>
 
+    </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>
