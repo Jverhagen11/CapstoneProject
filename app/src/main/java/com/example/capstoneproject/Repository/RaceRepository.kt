@@ -1,12 +1,11 @@
 package com.example.capstoneproject.Repository
 
-import android.content.ContentValues.TAG
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.capstoneproject.Api.RaceApi
 import com.example.capstoneproject.Api.RaceApiService
-import com.example.capstoneproject.Model.*
+import com.example.capstoneproject.Model.Models.Racemodels.MRData
+import com.example.capstoneproject.Model.Models.Racemodels.RaceX
 import kotlinx.coroutines.withTimeout
 
 class RaceRepository {

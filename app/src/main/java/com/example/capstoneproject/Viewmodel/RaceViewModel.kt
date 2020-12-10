@@ -5,9 +5,7 @@ import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.example.capstoneproject.Model.Data
-import com.example.capstoneproject.Model.RaceTable
-import com.example.capstoneproject.Model.RaceX
+import com.example.capstoneproject.Model.Models.Racemodels.RaceX
 import com.example.capstoneproject.Repository.RaceRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

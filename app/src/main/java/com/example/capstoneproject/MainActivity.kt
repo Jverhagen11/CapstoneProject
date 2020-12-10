@@ -21,15 +21,11 @@ class MainActivity : AppCompatActivity() {
         requestWindowFeature(Window.FEATURE_ACTION_BAR)
         setContentView(R.layout.activity_main)
 
-        navController = findNavController(R.id.nav_host_fragment)
+        navController = findNavController(R.id.fragment)
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
 
         bottomNavigationView.setupWithNavController(navController)
-
-
-
-
 
     }
 
