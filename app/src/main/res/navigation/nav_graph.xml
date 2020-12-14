@@ -17,9 +17,9 @@
     </fragment>
     <fragment
         android:id="@+id/secondFragment"
-        android:name="com.example.capstoneproject.SecondFragment"
+        android:name="com.example.capstoneproject.StandingsFragment"
         android:label="fragment_second"
-        tools:layout="@layout/fragment_second" >
+        tools:layout="@layout/fragment_standings" >
         <action
             android:id="@+id/action_secondFragment_to_firstFragment"
             app:destination="@id/firstFragment" />

@@ -6,6 +6,9 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.capstoneproject.Model.Models.Racemodels.RaceX
+import com.example.capstoneproject.Model.Models.Standings.Driver
+import com.example.capstoneproject.Model.Models.Standings.DriverStanding
+import com.example.capstoneproject.Model.Models.Standings.StandingsLists
 import com.example.capstoneproject.Repository.RaceRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -18,19 +21,37 @@ class RaceViewModel(application: Application) : AndroidViewModel(application) {
     private val raceRepository: RaceRepository = RaceRepository()
 
     val races: LiveData<List<RaceX>> = raceRepository.races
+    val standings: LiveData<List<DriverStanding>> = raceRepository.standings
 
     private val _errorText: MutableLiveData<String> = MutableLiveData()
     val errorText: LiveData<String> get() = _errorText
 
-    fun getData() {
+
+
+    fun getRaces() {
         mainScope.launch {
             try {
                 raceRepository.getData()
+
             } catch (error: RaceRepository.RaceError) {
                 _errorText.value = error.message
                 Log.e("Race error", error.cause.toString())
             }
         }
+    }
+    fun getStandings() {
+        mainScope.launch {
+            try {
+                raceRepository.getStanding()
+            } catch (error: RaceRepository.RaceError) {
+                _errorText.value = error.message
+                Log.e("Race error", error.cause.toString())
+            }
+        }
+    }
+
+    private fun getPastRaces() {
+
     }
 
 
