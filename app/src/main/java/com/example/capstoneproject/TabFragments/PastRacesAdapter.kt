@@ -26,9 +26,9 @@ class PastRacesAdapter(private val pastRaces: List<RaceX>)
             fun dataBind(race: RaceX) {
                 binding.raceName.text = race.raceName
                 binding.round.text = "Round " + race.round
-//                binding.time.text = race.time.format(DateTimeFormatter.ofPattern("HH:mm"))
+                binding.time.text = race.time.subSequence(0, 5)
                 binding.location.text = race.Circuit.Location.locality
-                binding.date.text = race.date.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG))
+                binding.date.text = race.date.subSequence(5, 10)
             }
         }
 

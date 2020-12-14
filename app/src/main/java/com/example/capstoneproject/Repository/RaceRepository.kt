@@ -50,8 +50,6 @@ class RaceRepository {
             }
             _standings.value = result.MRData.StandingsTable.StandingsLists[0].DriverStandings
 
-
-
         } catch (error: Throwable) {
             throw RaceError("Unable to refresh api", error)
         }

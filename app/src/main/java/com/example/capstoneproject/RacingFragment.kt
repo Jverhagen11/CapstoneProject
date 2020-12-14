@@ -12,7 +12,9 @@ import com.example.capstoneproject.TabFragments.ViewPagerAdapter
 import com.example.capstoneproject.Viewmodel.RaceViewModel
 import kotlinx.android.synthetic.main.fragment_first.*
 
-class FirstFragment : Fragment() {
+class RacingFragment : Fragment() {
+
+
 
 
     override fun onCreateView(
@@ -26,6 +28,7 @@ class FirstFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         activity?.setTitle("Racing")
+
         setUpTabs()
 
     }

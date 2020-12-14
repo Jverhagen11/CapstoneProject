@@ -11,15 +11,18 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.capstoneproject.Model.Models.Racemodels.RaceX
 import com.example.capstoneproject.R
 import com.example.capstoneproject.databinding.FragmentUpcomingRaceItemBinding
+import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.time.format.DateTimeFormatter
 import java.time.format.FormatStyle
+import java.util.*
 
 
 class UpcomingRacesAdapter(private val races: List<RaceX>) :
         RecyclerView.Adapter<UpcomingRacesAdapter.ViewHolder>() {
 
     private lateinit var context: Context
+
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
@@ -29,9 +32,9 @@ class UpcomingRacesAdapter(private val races: List<RaceX>) :
         fun dataBind(race: RaceX) {
             binding.raceName.text = race.raceName
             binding.round.text = "Round " + race.round
-//            binding.time.text = race.time.format(DateTimeFormatter.ofPattern("HH:mm"))
+            binding.time.text = race.time.subSequence(0, 5)
             binding.location.text = race.Circuit.Location.locality
-            binding.date.text = race.date.format(SimpleDateFormat("ddMM"))
+            binding.date.text = race.date.subSequence(5, 10)
         }
     }
 

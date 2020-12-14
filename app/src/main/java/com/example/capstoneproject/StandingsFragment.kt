@@ -37,6 +37,7 @@ class StandingsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        activity?.setTitle("Standings")
         raceViewModel.getStandings()
         observeRace()
         initRecyclerView()
