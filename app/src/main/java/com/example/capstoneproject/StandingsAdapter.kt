@@ -23,9 +23,9 @@ class StandingsAdapter(private val standings: ArrayList<DriverStanding>)
 
         fun dataBind( driver: DriverStanding) {
             binding.position.text = driver.position
-            binding.driverName.text = driver.Driver.givenName
-            binding.ponts.text = driver.points
-            binding.wins.text = driver.wins
+            binding.driverName.text = driver.Driver.givenName + driver.Driver.familyName
+            binding.points.text = driver.points + " PTS"
+            binding.team.text = driver.Constructors[0].name
         }
     }
 

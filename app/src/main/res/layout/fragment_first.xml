@@ -19,7 +19,7 @@
         app:tabTextAppearance="@style/CustomTabStyle"
         app:tabTextColor="@color/white" />
     <androidx.viewpager.widget.ViewPager
-        android:background="#eeebe3"
+        android:background="@drawable/carbonfiber"
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

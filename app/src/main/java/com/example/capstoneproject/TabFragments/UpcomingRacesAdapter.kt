@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.capstoneproject.Model.Models.Racemodels.RaceX
 import com.example.capstoneproject.R
 import com.example.capstoneproject.databinding.FragmentUpcomingRaceItemBinding
+import java.text.SimpleDateFormat
 import java.time.format.DateTimeFormatter
 import java.time.format.FormatStyle
 
@@ -27,10 +28,10 @@ class UpcomingRacesAdapter(private val races: List<RaceX>) :
         @RequiresApi(Build.VERSION_CODES.O)
         fun dataBind(race: RaceX) {
             binding.raceName.text = race.raceName
-            binding.round.text = race.round
-            binding.time.text = race.time.format(DateTimeFormatter.ofPattern("HH:mm"))
+            binding.round.text = "Round " + race.round
+//            binding.time.text = race.time.format(DateTimeFormatter.ofPattern("HH:mm"))
             binding.location.text = race.Circuit.Location.locality
-            binding.date.text = race.date.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG))
+            binding.date.text = race.date.format(SimpleDateFormat("ddMM"))
         }
     }
 

@@ -25,8 +25,8 @@ class PastRacesAdapter(private val pastRaces: List<RaceX>)
             @RequiresApi(Build.VERSION_CODES.O)
             fun dataBind(race: RaceX) {
                 binding.raceName.text = race.raceName
-                binding.round.text = race.round
-                binding.time.text = race.time.format(DateTimeFormatter.ofPattern("HH:mm"))
+                binding.round.text = "Round " + race.round
+//                binding.time.text = race.time.format(DateTimeFormatter.ofPattern("HH:mm"))
                 binding.location.text = race.Circuit.Location.locality
                 binding.date.text = race.date.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG))
             }
