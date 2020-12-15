@@ -5,12 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.capstoneproject.Model.Models.Standings.DriverStanding
+import com.example.capstoneproject.Model.Models.Standings.DriverRoot
 import com.example.capstoneproject.Model.Models.Standings.StandingsLists
 import com.example.capstoneproject.databinding.FragmentPastRacesItemBinding
 import com.example.capstoneproject.databinding.FragmentStandingItemBinding
 
-class StandingsAdapter(private val standings: ArrayList<DriverStanding>)
+class StandingsAdapter(private val standings: ArrayList<DriverRoot.DriverStanding>, private val onClick: (DriverRoot.DriverStanding) -> Unit)
 
     : RecyclerView.Adapter<StandingsAdapter.ViewHolder>() {
 
@@ -20,10 +20,15 @@ class StandingsAdapter(private val standings: ArrayList<DriverStanding>)
 
         val binding = FragmentStandingItemBinding.bind(itemView)
 
+        init {
+            itemView.setOnClickListener {
+                onClick(standings[adapterPosition])
+            }
+        }
 
-        fun dataBind( driver: DriverStanding) {
+        fun dataBind( driver: DriverRoot.DriverStanding) {
             binding.position.text = driver.position
-            binding.driverName.text = driver.Driver.givenName + driver.Driver.familyName
+            binding.driverName.text = driver.Driver.givenName + " " +  driver.Driver.familyName
             binding.points.text = driver.points + " PTS"
             binding.team.text = driver.Constructors[0].name
         }

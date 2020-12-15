@@ -23,5 +23,17 @@
         <action
             android:id="@+id/action_secondFragment_to_firstFragment"
             app:destination="@id/firstFragment" />
+        <action
+            android:id="@+id/action_secondFragment_to_overviewStandingFragment"
+            app:destination="@id/overviewStandingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/overviewStandingFragment"
+        android:name="com.example.capstoneproject.OverviewStandingFragment"
+        android:label="fragment_overview_standing"
+        tools:layout="@layout/fragment_overview_standing" >
+        <action
+            android:id="@+id/action_overviewStandingFragment_to_secondFragment"
+            app:destination="@id/secondFragment" />
     </fragment>
 </navigation>

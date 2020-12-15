@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
 
         bottomNavigationView.setupWithNavController(navController)
+        navigation()
 
     }
 
@@ -42,6 +43,27 @@ class MainActivity : AppCompatActivity() {
         // as you specify a parent activity in AndroidManifest.xml.
         return when (item.itemId) {
             else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        val count = supportFragmentManager.backStackEntryCount
+        if (count == 0) {
+            super.onBackPressed()
+        } else {
+            supportActionBar?.setHomeButtonEnabled(false)
+            supportFragmentManager.popBackStack()
+        }
+        return true
+    }
+
+    private fun navigation(){
+        navController.addOnDestinationChangedListener{_, destination, _ ->
+            if(destination.id in arrayOf(R.id.overviewStandingFragment)){
+                supportActionBar?.setDisplayHomeAsUpEnabled(true)
+            } else {
+                supportActionBar?.setDisplayHomeAsUpEnabled(false)
+            }
         }
     }
 

@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:layout_marginRight="5dp"
     android:layout_marginBottom="5dp"
-    android:layout_marginTop="10dp"
+    android:layout_marginTop="5dp"
     android:padding="8dp">
 
     <LinearLayout
@@ -27,7 +27,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:textAlignment="center"
-                android:gravity="center_vertical"
+                android:gravity="center_horizontal"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -76,6 +76,8 @@
                     android:layout_height="wrap_content"/>
 
                 <ImageButton
+                    android:id="@+id/btn_standing"
+                    android:clickable="false"
                     android:layout_gravity="center_vertical"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

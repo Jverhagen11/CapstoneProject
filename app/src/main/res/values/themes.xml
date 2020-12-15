@@ -22,9 +22,14 @@
 
     <style name="Theme.CapstoneProject.AppBarOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
-    <style name="Theme.CapstoneProject.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="Theme.CapstoneProject.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
+    <item name="android:windowActionBar">true</item>
+    <item name="android:homeAsUpIndicator">@drawable/ic_baseline_arrow_back_24</item>
+    </style>
 
     <style name="CustomTabStyle" parent="TextAppearance.Design.Tab">
         <item name="android:textSize">10sp</item>
     </style>
+
+
 </resources>

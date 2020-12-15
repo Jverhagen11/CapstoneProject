@@ -6,25 +6,28 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.os.bundleOf
+import androidx.fragment.app.setFragmentResult
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.capstoneproject.Model.Models.Standings.Driver
-import com.example.capstoneproject.Model.Models.Standings.DriverStanding
-import com.example.capstoneproject.Model.Models.Standings.StandingsLists
+import com.example.capstoneproject.Model.Models.Standings.*
 import com.example.capstoneproject.Viewmodel.RaceViewModel
+import kotlinx.android.synthetic.main.fragment_past_races_item.*
+import kotlinx.android.synthetic.main.fragment_standing_item.*
 import kotlinx.android.synthetic.main.fragment_standings.*
 import kotlinx.android.synthetic.main.fragment_upcoming_races.*
 
-/**
- * A simple [Fragment] subclass as the second destination in the navigation.
- */
+const val BUNDLE_STANDING_KEY = "bundle_standing_key"
+const val REQ_STANDING_KEY = "req_standing_key"
+
 class StandingsFragment : Fragment() {
 
 
-    private val standings = arrayListOf<DriverStanding>()
-    private val standingsAdapter = StandingsAdapter(standings)
+    private val standings = arrayListOf<DriverRoot.DriverStanding>()
+    private val standingsAdapter = StandingsAdapter(standings, ::onStandingClick)
     private val raceViewModel: RaceViewModel by viewModels()
 
     override fun onCreateView(
@@ -55,6 +58,15 @@ class StandingsFragment : Fragment() {
                     )
             )
         }
+
+    }
+
+    private fun onStandingClick(standing: DriverRoot.DriverStanding) {
+
+        setFragmentResult(REQ_STANDING_KEY, bundleOf(Pair(BUNDLE_STANDING_KEY, standing)))
+        findNavController().navigate(R.id.action_secondFragment_to_overviewStandingFragment)
+
+
     }
 
     private fun observeRace() {

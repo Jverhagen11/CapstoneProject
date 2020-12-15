@@ -8,10 +8,7 @@ import com.example.capstoneproject.Api.RaceApi
 import com.example.capstoneproject.Api.RaceApiService
 import com.example.capstoneproject.Model.Models.Racemodels.MRData
 import com.example.capstoneproject.Model.Models.Racemodels.RaceX
-import com.example.capstoneproject.Model.Models.Standings.Driver
-import com.example.capstoneproject.Model.Models.Standings.DriverStanding
-import com.example.capstoneproject.Model.Models.Standings.StandingData
-import com.example.capstoneproject.Model.Models.Standings.StandingsLists
+import com.example.capstoneproject.Model.Models.Standings.*
 import kotlinx.coroutines.withTimeout
 
 class RaceRepository {
@@ -21,8 +18,8 @@ class RaceRepository {
     private val _races: MutableLiveData<List<RaceX>> = MutableLiveData()
     val races: LiveData<List<RaceX>> get() = _races
 
-    private val _standings: MutableLiveData<List<DriverStanding>> = MutableLiveData()
-    val standings: LiveData<List<DriverStanding>> get() = _standings
+    private val _standings: MutableLiveData<List<DriverRoot.DriverStanding>> = MutableLiveData()
+    val standings: LiveData<List<DriverRoot.DriverStanding>> get() = _standings
 
 
 
