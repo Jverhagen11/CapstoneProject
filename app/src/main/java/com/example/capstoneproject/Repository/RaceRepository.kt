@@ -22,8 +22,6 @@ class RaceRepository {
     val standings: LiveData<List<DriverRoot.DriverStanding>> get() = _standings
 
 
-
-
     @RequiresApi(Build.VERSION_CODES.N)
     suspend fun getData() {
         try {
@@ -51,8 +49,6 @@ class RaceRepository {
             throw RaceError("Unable to refresh api", error)
         }
     }
-
-
 
 
     class RaceError(message: String, cause: Throwable) : Throwable(message, cause)
