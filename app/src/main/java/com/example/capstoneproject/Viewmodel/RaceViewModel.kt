@@ -53,9 +53,6 @@ class RaceViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
-    private fun getPastRaces() {
-
-    }
 
 
 

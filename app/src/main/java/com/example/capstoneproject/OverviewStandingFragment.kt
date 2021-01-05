@@ -17,7 +17,6 @@ import kotlinx.android.synthetic.main.fragment_overview_standing.*
 class OverviewStandingFragment: Fragment() {
 
 
-
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
@@ -47,10 +46,14 @@ class OverviewStandingFragment: Fragment() {
         driverNumber.text = standing.Driver.permanentNumber
         team.text = standing.Constructors[0].name
         code.text = standing.Driver.code
-        date.text = "Date of birth: " + standing.Driver.dateOfBirth
-        natio.text = "Nationality: " + standing.Driver.nationality
-        win.text = "Points: " + standing.points
-        points.text = "Wins: " + standing.wins
+        date.text =  standing.Driver.dateOfBirth
+        dateTitle.text = getString(R.string.date)
+        natioTitle.text = getString(R.string.Nationality)
+        natio.text =   standing.Driver.nationality
+        win.text =  standing.points
+        winTitle.text = getString(R.string.Points)
+        points.text =  standing.wins
+        pointsTitle.text = getString(R.string.Wins)
 
 
         btn_more.setOnClickListener {
@@ -63,51 +66,51 @@ class OverviewStandingFragment: Fragment() {
 
         val name = firstName.text
 
-        if (name ==  "Lewis") {
+        if (name ==  getString(R.string.lewis)) {
             image.setImageResource(R.drawable.lewis)
-        } else if (name == "Valtteri") {
+        } else if( name ==  getString(R.string.Valtteri)) {
             image.setImageResource(R.drawable.valteri)
-        } else if (name == "Max") {
+        } else if (name == getString(R.string.Max)) {
             image.setImageResource(R.drawable.max)
-        } else if (name == "Sergio") {
+        } else if (name == getString(R.string.Sergio) ) {
             image.setImageResource(R.drawable.sergio)
-        } else if (name == "Daniel") {
+        } else if (name == getString(R.string.Daniel)) {
             image.setImageResource(R.drawable.daniel)
-        } else if (name == "Carlos") {
+        } else if (name == getString(R.string.Carlos)) {
             image.setImageResource(R.drawable.carlos)
-        } else if (name == "Alexander") {
+        } else if (name == getString(R.string.Alexander)) {
             image.setImageResource(R.drawable.alexander)
-        } else if (name == "Charles") {
+        } else if (name == getString(R.string.Charles)) {
             image.setImageResource(R.drawable.charles)
-        } else if (name == "Lando") {
+        } else if (name == getString(R.string.Lando)) {
             image.setImageResource(R.drawable.lando)
-        } else if (name == "Pierre") {
+        } else if (name == getString(R.string.Pierre)) {
             image.setImageResource(R.drawable.pierre)
-        } else if (name == "Lance") {
+        } else if (name == getString(R.string.Lance)) {
             image.setImageResource(R.drawable.lance)
-        } else if (name == "Esteban") {
+        } else if (name == getString(R.string.Esteban)) {
             image.setImageResource(R.drawable.esteban)
-        } else if (name == "Sebastian") {
+        } else if (name == getString(R.string.Sebastian)) {
             image.setImageResource(R.drawable.sebastian)
-        } else if (name == "Daniil") {
+        } else if (name == getString(R.string.Daniil)) {
             image.setImageResource(R.drawable.daniiel)
-        } else if (name == "Nico") {
+        } else if (name == getString(R.string.Nico)) {
             image.setImageResource(R.drawable.nico)
-        } else if (name == "Kimi") {
+        } else if (name == getString(R.string.Kimi)) {
             image.setImageResource(R.drawable.kimi)
-        } else if (name == "Antonio") {
+        } else if (name == getString(R.string.Antonio)) {
             image.setImageResource(R.drawable.antonio)
-        } else if (name == "George") {
+        } else if (name == getString(R.string.George)) {
             image.setImageResource(R.drawable.george)
-        } else if (name == "Romain") {
+        } else if (name == getString(R.string.Romain)) {
             image.setImageResource(R.drawable.romain)
-        } else if (name == "Kevin") {
+        } else if (name == getString(R.string.Kevin)) {
             image.setImageResource(R.drawable.kevin)
-        } else if (name == "Nicholas") {
+        } else if (name == getString(R.string.Nicholas)) {
             image.setImageResource(R.drawable.nicholas)
-        } else if (name == "Jack") {
+        } else if (name == getString(R.string.Jack)) {
             image.setImageResource(R.drawable.jack)
-        } else if (name == "Pietro") {
+        } else if (name == getString(R.string.Pietro)) {
             image.setImageResource(R.drawable.pietro)
         }
 

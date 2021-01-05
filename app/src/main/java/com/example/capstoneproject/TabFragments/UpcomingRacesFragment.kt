@@ -15,11 +15,15 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.capstoneproject.Model.Models.Racemodels.RaceX
 import com.example.capstoneproject.R
 import com.example.capstoneproject.Viewmodel.RaceViewModel
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_upcoming_races.*
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 
 class UpcomingRacesFragment : Fragment() {
 
     private val races = arrayListOf<RaceX>()
+    private val filterRaces = arrayListOf<RaceX>()
     private val raceAdapter = UpcomingRacesAdapter(races)
     private val raceViewModel: RaceViewModel by viewModels()
 
@@ -53,10 +57,28 @@ class UpcomingRacesFragment : Fragment() {
         }
     }
 
+
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun observeRace() {
         raceViewModel.races.observe(viewLifecycleOwner, Observer {
+
             races.clear()
-            races.addAll(it)
+            filterRaces.addAll(it)
+
+            for (race in filterRaces){
+
+                val date = LocalDate.parse(race.date, DateTimeFormatter.ISO_DATE)
+                val raceDate = LocalDate.now()
+
+                if(date > raceDate) {
+                    races.add(race)
+                }
+            }
+
+            if (races.isEmpty()){
+                Snackbar.make(requireView(), "There are no upcoming races", Snackbar.LENGTH_SHORT).show()
+            }
+
             raceAdapter.notifyDataSetChanged()
             })
         // Observe the error message.

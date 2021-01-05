@@ -8,4 +8,37 @@
     <string name="previous">Previous</string>
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <!-- strings -->
+    <string name="date">Date of birth: </string>
+    <string name="Nationality">Nationality:</string>
+    <string name="Points">Points:</string>
+    <string name="Wins">Wins:</string>
+    <string name="round">Round</string>
+    <string name="Racing">Racing</string>
+
+    <string name="lewis">Lewis</string>
+    <string name="Valtteri">Valtteri</string>
+    <string name="Max">Max</string>
+    <string name="Sergio">Sergio</string>
+    <string name="Daniel">Daniel</string>
+    <string name="Carlos">Carlos</string>
+    <string name="Alexander">Alexander</string>
+    <string name="Charles">Charles</string>
+    <string name="Lando">Lando</string>
+    <string name="Pierre">Pierre</string>
+    <string name="Lance">Lance</string>
+    <string name="Esteban">Esteban</string>
+    <string name="Sebastian">Sebastian</string>
+    <string name="Daniil">Daniil</string>
+    <string name="Nico">Nico</string>
+    <string name="Kimi">Kimi</string>
+    <string name="Antonio">Antonio</string>
+    <string name="George">George</string>
+    <string name="Romain">Romain</string>
+    <string name="Kevin">Kevin</string>
+    <string name="Nicholas">Nicholas</string>
+    <string name="Jack">Jack</string>
+    <string name="Pietro">Pietro</string>
+
 </resources>
