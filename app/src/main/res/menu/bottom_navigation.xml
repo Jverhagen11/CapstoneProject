@@ -2,17 +2,22 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-
     <item
         android:id="@+id/firstFragment"
         android:icon="@drawable/flag"
-        android:title="Racing"
+        android:title="@string/racing"
         />
 
     <item
         android:id="@+id/secondFragment"
         android:icon="@drawable/helmet"
-        android:title="Standings"
+        android:title="@string/standings"
+        />
+
+    <item
+        android:id="@+id/moreFragment"
+        android:icon="@drawable/ic_baseline_more_horiz_24"
+        android:title="@string/more"
         />
 
 

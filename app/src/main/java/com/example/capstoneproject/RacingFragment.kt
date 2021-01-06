@@ -15,8 +15,6 @@ import kotlinx.android.synthetic.main.fragment_first.*
 class RacingFragment : Fragment() {
 
 
-
-
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?

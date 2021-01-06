@@ -16,6 +16,8 @@
     <string name="Wins">Wins:</string>
     <string name="round">Round</string>
     <string name="Racing">Racing</string>
+    <string name="More">More</string>
+    <string name="About">About this app</string>
 
     <string name="lewis">Lewis</string>
     <string name="Valtteri">Valtteri</string>
@@ -40,5 +42,12 @@
     <string name="Nicholas">Nicholas</string>
     <string name="Jack">Jack</string>
     <string name="Pietro">Pietro</string>
+    <string name="about_this_app">About this App</string>
+    <string name="racing">Racing</string>
+    <string name="standings">Standings</string>
+    <string name="more">More</string>
+    <string name="capstone_project_application">Formula 1 Application</string>
+    <string name="this_formula_1_application_is_made_by_jo_l_verhagen_a_third_year_student_of_hbo_ict_software_engineering">This Formula 1 Application is made by Joël Verhagen, a third year student of HBO-ICT software engineering.</string>
+    <string name="the_idea_of_this_application_is_a_simple_overview_application_to_see_when_a_formula_1_race_is_the_races_are_upcoming_or_past_in_addition_there_is_a_standings_overview_containing_all_the_current_drivers_of_the_formula_1">The idea of this application is a simple overview application to see when a Formula 1 race is. The races are upcoming or past. In addition, there is a standings overview containing all the current drivers of the formula 1.</string>
 
 </resources>

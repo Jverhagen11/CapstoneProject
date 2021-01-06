@@ -36,4 +36,18 @@
             android:id="@+id/action_overviewStandingFragment_to_secondFragment"
             app:destination="@id/secondFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/moreFragment"
+        android:name="com.example.capstoneproject.MoreFragment"
+        android:label="fragment_more"
+        tools:layout="@layout/fragment_more" >
+        <action
+            android:id="@+id/action_moreFragment_to_aboutAppFragment2"
+            app:destination="@id/aboutAppFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutAppFragment2"
+        android:name="com.example.capstoneproject.AboutAppFragment"
+        android:label="fragment_about_app"
+        tools:layout="@layout/fragment_about_app" />
 </navigation>

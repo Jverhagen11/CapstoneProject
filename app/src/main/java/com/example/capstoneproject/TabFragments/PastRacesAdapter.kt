@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 import com.example.capstoneproject.Model.Models.Racemodels.RaceX
+import com.example.capstoneproject.Model.Models.Standings.DriverRoot
 import com.example.capstoneproject.R
 import com.example.capstoneproject.databinding.FragmentPastRacesItemBinding
 import java.time.format.DateTimeFormatter
