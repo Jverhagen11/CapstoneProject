@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/firstFragment"
-        android:name="com.example.capstoneproject.RacingFragment"
+        android:name="com.example.capstoneproject.TabFragments.RacingFragment"
         android:label="fragment_first"
         tools:layout="@layout/fragment_first" >
         <action
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/secondFragment"
-        android:name="com.example.capstoneproject.StandingsFragment"
+        android:name="com.example.capstoneproject.Standing.StandingsFragment"
         android:label="fragment_second"
         tools:layout="@layout/fragment_standings" >
         <action
@@ -29,7 +29,7 @@
     </fragment>
     <fragment
         android:id="@+id/overviewStandingFragment"
-        android:name="com.example.capstoneproject.OverviewStandingFragment"
+        android:name="com.example.capstoneproject.Standing.OverviewStandingFragment"
         android:label="fragment_overview_standing"
         tools:layout="@layout/fragment_overview_standing" >
         <action
@@ -38,7 +38,7 @@
     </fragment>
     <fragment
         android:id="@+id/moreFragment"
-        android:name="com.example.capstoneproject.MoreFragment"
+        android:name="com.example.capstoneproject.More.MoreFragment"
         android:label="fragment_more"
         tools:layout="@layout/fragment_more" >
         <action
@@ -47,7 +47,7 @@
     </fragment>
     <fragment
         android:id="@+id/aboutAppFragment2"
-        android:name="com.example.capstoneproject.AboutAppFragment"
+        android:name="com.example.capstoneproject.More.AboutAppFragment"
         android:label="fragment_about_app"
         tools:layout="@layout/fragment_about_app" />
 </navigation>

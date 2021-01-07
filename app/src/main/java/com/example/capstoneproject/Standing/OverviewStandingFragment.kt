@@ -1,6 +1,5 @@
-package com.example.capstoneproject
+package com.example.capstoneproject.Standing
 
-import android.R.drawable
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -10,8 +9,8 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.setFragmentResultListener
-import com.example.capstoneproject.Model.Models.Standings.Driver
 import com.example.capstoneproject.Model.Models.Standings.DriverRoot
+import com.example.capstoneproject.R
 import kotlinx.android.synthetic.main.fragment_overview_standing.*
 
 class OverviewStandingFragment: Fragment() {

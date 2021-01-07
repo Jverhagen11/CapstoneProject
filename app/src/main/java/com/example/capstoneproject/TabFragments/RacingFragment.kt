@@ -1,15 +1,11 @@
-package com.example.capstoneproject
+package com.example.capstoneproject.TabFragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.viewModels
-import com.example.capstoneproject.TabFragments.PastRacesFragment
-import com.example.capstoneproject.TabFragments.UpcomingRacesFragment
-import com.example.capstoneproject.TabFragments.ViewPagerAdapter
-import com.example.capstoneproject.Viewmodel.RaceViewModel
+import com.example.capstoneproject.R
 import kotlinx.android.synthetic.main.fragment_first.*
 
 class RacingFragment : Fragment() {

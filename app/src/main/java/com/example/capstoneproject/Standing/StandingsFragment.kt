@@ -1,4 +1,4 @@
-package com.example.capstoneproject
+package com.example.capstoneproject.Standing
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -14,11 +14,9 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.capstoneproject.Model.Models.Standings.*
+import com.example.capstoneproject.R
 import com.example.capstoneproject.Viewmodel.RaceViewModel
-import kotlinx.android.synthetic.main.fragment_past_races_item.*
-import kotlinx.android.synthetic.main.fragment_standing_item.*
 import kotlinx.android.synthetic.main.fragment_standings.*
-import kotlinx.android.synthetic.main.fragment_upcoming_races.*
 
 const val BUNDLE_STANDING_KEY = "bundle_standing_key"
 const val REQ_STANDING_KEY = "req_standing_key"

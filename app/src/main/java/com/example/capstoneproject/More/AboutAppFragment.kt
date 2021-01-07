@@ -1,7 +1,8 @@
-package com.example.capstoneproject
+package com.example.capstoneproject.More
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
+import com.example.capstoneproject.R
 import com.example.capstoneproject.databinding.FragmentAboutAppBinding
 
 class AboutAppFragment : Fragment() {

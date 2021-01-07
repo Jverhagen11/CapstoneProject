@@ -1,4 +1,4 @@
-package com.example.capstoneproject
+package com.example.capstoneproject.Standing
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,8 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.capstoneproject.Model.Models.Standings.DriverRoot
-import com.example.capstoneproject.Model.Models.Standings.StandingsLists
-import com.example.capstoneproject.databinding.FragmentPastRacesItemBinding
+import com.example.capstoneproject.R
 import com.example.capstoneproject.databinding.FragmentStandingItemBinding
 
 class StandingsAdapter(private val standings: ArrayList<DriverRoot.DriverStanding>, private val onClick: (DriverRoot.DriverStanding) -> Unit)

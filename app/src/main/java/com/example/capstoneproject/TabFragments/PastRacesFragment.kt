@@ -7,22 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.annotation.RequiresApi
-import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.setFragmentResult
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.capstoneproject.BUNDLE_STANDING_KEY
 import com.example.capstoneproject.Model.Models.Racemodels.RaceX
-import com.example.capstoneproject.Model.Models.Standings.DriverRoot
 import com.example.capstoneproject.R
-import com.example.capstoneproject.REQ_STANDING_KEY
 import com.example.capstoneproject.Viewmodel.RaceViewModel
 import kotlinx.android.synthetic.main.fragment_past_races.*
-import kotlinx.android.synthetic.main.fragment_past_races_item.*
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
